@@ -85,6 +85,7 @@ main {
     var(--Gradient-Soft-violet),
     var(--Gradient-Soft-blue)
   );
+  position: relative;
 }
 
 ul li {
@@ -172,9 +173,9 @@ h2 {
   color: var(--Text-Soft-red);
 }
 
-.box-img:hover {
+/* .box-img:hover {
   transform: translateX(-4rem);
-}
+} */
 
 .questions h5 {
   font-weight: 400;
@@ -199,4 +200,128 @@ h2 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 90em) {
+  .box-img {
+    transform: translate(-1rem, -7rem);
+  }
+}
+
+@media (max-width: 64em) {
+  .box-img {
+    transform: translate(-17rem, -7rem);
+  }
+
+  .container {
+    width: 90%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 48em) {
+  main {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 6rem;
+  }
+
+  .box-img {
+    display: none;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 70%;
+  }
+
+  main::before {
+    content: "";
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: 2rem;
+    background-image: url(./images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 1111;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .accordion {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 23.5em) {
+  html {
+    font-size: 60%;
+  }
+  main {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 6rem;
+  }
+
+  .box-img {
+    display: none;
+  }
+
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 70%;
+  }
+
+  main::before {
+    content: "";
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 2rem;
+    background-image: url(./images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 1111;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .accordion {
+    padding-bottom: 3rem;
+  }
+
+  .accordion-lists {
+    width: 30rem;
+  }
 }
