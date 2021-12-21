@@ -1,0 +1,202 @@
+/* 
+---01 TYPOGRAPHY SYSTEM
+
+- Font Sizes (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font Weight: 
+  
+  Defaults: 300
+  Medium: 400
+  Semi-bold: 600
+
+- Line Height: 
+
+  Paragraph Default: 1.5
+
+- Lettre spacing: 
+
+ .5px
+.75px
+
+
+---02 COLORS
+
+  - Primary: 
+  - Tints:  
+  - Shades: 
+    
+  - Accents:
+  - Greys:  
+
+
+---05 SHADOWS
+  8px 8px 30px rgba(0, 0, 0, 0.1)
+
+---06 BORDER-RADIUS
+
+    Big: 1.6rem = 16px
+    Medium: 1.2rem = 12 px
+
+
+---07 WHITESPACE
+
+  - SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;400;700&display=swap");
+
+:root {
+  --Text-dark-blue: hsl(238, 29%, 16%);
+  --Text-Soft-red: hsl(14, 88%, 65%);
+  --Gradient-Soft-violet: hsl(273, 75%, 66%);
+  --Gradient-Soft-blue: hsl(240, 73%, 65%);
+  --Text-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Text-Dark-grayish-blue: hsl(240, 6%, 50%);
+  --Dividers-Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    var(--Gradient-Soft-violet),
+    var(--Gradient-Soft-blue)
+  );
+}
+
+ul li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 3.6rem;
+  color: var(--Text-dark-blue);
+}
+
+.container {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0rem 1rem 5rem #0002;
+  width: 70%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.box-img {
+  width: 18rem;
+  height: auto;
+  position: fixed;
+  left: 14rem;
+  top: 43rem;
+  z-index: 1;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/illustration-woman-online-desktop.svg),
+    url(./images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: -8rem, 125% 70%;
+  /* background-size: 110%, 100%; */
+}
+
+.accordion {
+  /* padding: 9rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-self: start;
+}
+.accordion-lists {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  /* padding: 1rem 0; */
+}
+.accordion-list {
+  border-bottom: 1px solid var(--Dividers-Light-grayish-blue);
+  padding: 2rem 0;
+}
+
+.accordion-list p {
+  width: 95%;
+  display: none;
+  margin-top: 1.2rem;
+  color: var(--Text-Dark-grayish-blue);
+  line-height: 1.5;
+  font-weight: 400;
+  margin-right: 3rem;
+}
+
+.questions {
+  font-size: 1.8rem;
+  color: var(--Text-very-dark-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9rem;
+  transition: all 200ms ease-in;
+}
+
+.questions:hover {
+  cursor: pointer;
+  color: var(--Text-Soft-red);
+}
+
+.box-img:hover {
+  transform: translateX(-4rem);
+}
+
+.questions h5 {
+  font-weight: 400;
+}
+
+/* Active state */
+.active.accordion-list p {
+  display: block;
+}
+
+.active.accordion-list h5 {
+  font-weight: 600;
+}
+
+.active.accordion-list img {
+  transform: rotateX(180deg);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
